@@ -21,3 +21,9 @@ class SignupSerializer(serializers.ModelSerializer):
                 gender=validated_data.get('gender', ''),
             )
             return user
+        
+        
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'first_name', 'last_name', 'nickname', 'birth', 'gender']
